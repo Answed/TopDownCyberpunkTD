@@ -1,29 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7y3b14du70br"]
+[gd_scene load_steps=7 format=3 uid="uid://c7y3b14du70br"]
 
 [ext_resource type="PackedScene" uid="uid://dvehql4n3x7oj" path="res://Scenes/Player.tscn" id="1_atg34"]
+[ext_resource type="PackedScene" uid="uid://t50x6064htkr" path="res://Scenes/AutoTurret.tscn" id="2_h5yu3"]
+[ext_resource type="PackedScene" uid="uid://dqfhiekuw1i8e" path="res://Scenes/Enemy.tscn" id="3_84fth"]
 
-[sub_resource type="Curve2D" id="Curve2D_fk2ii"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5, -1, 0, 0, 0, 0, 443, -5, 0, 0, 0, 0, 451, 365, 0, 0, 0, 0, -6, 358, 0, 0, 0, 0, -5, -1)
-}
-point_count = 5
+[sub_resource type="BoxShape3D" id="BoxShape3D_yagxk"]
+size = Vector3(400, 1, 400)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jvktr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2iw3"]
+albedo_color = Color(0.0470588, 1, 1, 1)
 
 [node name="Main" type="Node"]
 
-[node name="StartTimer" type="Timer" parent="."]
+[node name="GroundFloor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="MobTimer" type="Timer" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundFloor"]
+shape = SubResource("BoxShape3D_yagxk")
 
-[node name="ScoreTimer" type="Timer" parent="."]
-
-[node name="StartPosition" type="Marker2D" parent="."]
-
-[node name="MobPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_fk2ii")
-
-[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
-position = Vector2(-5, -1)
-rotation = -0.00892834
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GroundFloor/CollisionShape3D"]
+transform = Transform3D(400, 0, 0, 0, 1, 0, 0, 0, 400, 0, 0, 0)
+mesh = SubResource("BoxMesh_jvktr")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_g2iw3")
 
 [node name="Player" parent="." instance=ExtResource("1_atg34")]
-position = Vector2(70, 74.66)
+collision_layer = 2
+collision_mask = 4
+speed = 10
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.3468, 0)
+light_energy = 3.505
+light_indirect_energy = 19.91
+light_volumetric_fog_energy = 21.07
+light_size = 2.475
+light_specular = 114.885
+omni_range = 2826.47
+
+[node name="Enemy" parent="." instance=ExtResource("3_84fth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.375, 1, 5.185)
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="AutoTurret" parent="." instance=ExtResource("2_h5yu3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77087, 1, 7.26122)

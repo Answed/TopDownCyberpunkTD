@@ -1,13 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://mk2db1la0llg"]
+[gd_scene load_steps=5 format=3 uid="uid://dqfhiekuw1i8e"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_tl3gt"]
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_ag4n8"]
 
-[node name="RigidBody2D" type="RigidBody2D"]
-collision_mask = 0
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2cdc"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bnybc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrmmc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Enemy" type="RigidBody3D" groups=["Enemies"]]
+collision_mask = 4
 gravity_scale = 0.0
-script = ExtResource("1_tl3gt")
-metadata/_edit_group_ = true
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ag4n8")
+health = 3
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_g2cdc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_bnybc")
+surface_material_override/0 = SubResource("StandardMaterial3D_yrmmc")
+
+[connection signal="body_entered" from="." to="." method="_onBodyEntered"]

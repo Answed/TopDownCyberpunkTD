@@ -1,15 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvehql4n3x7oj"]
+[gd_scene load_steps=9 format=3 uid="uid://dvehql4n3x7oj"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_iwnbf"]
-[ext_resource type="Texture2D" uid="uid://7c8chnk7au4l" path="res://Textures/icon.svg" id="2_jjo50"]
+[ext_resource type="PackedScene" uid="uid://bwhaewe2goxu7" path="res://Scenes/Bullet.tscn" id="2_t3noh"]
+[ext_resource type="Script" path="res://Scripts/Ui.cs" id="3_aq8e7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tajvs"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xn7oi"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y3xtc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pa5w6"]
+albedo_color = Color(1, 1, 0.231373, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hx0x8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tosgo"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody3D" groups=["PlayerObjects"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+collision_layer = 6
+collision_mask = 0
+platform_floor_layers = 4294967042
+platform_wall_layers = 4
 script = ExtResource("1_iwnbf")
+bulletScene = ExtResource("2_t3noh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tajvs")
+[node name="Rig" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0174909, 2.38419e-07, -0.00258207)
+shape = SubResource("CapsuleShape3D_xn7oi")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jjo50")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rig"]
+mesh = SubResource("CapsuleMesh_y3xtc")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_pa5w6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Rig/MeshInstance3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.481759, -0.526517)
+mesh = SubResource("BoxMesh_hx0x8")
+surface_material_override/0 = SubResource("StandardMaterial3D_tosgo")
+
+[node name="BulletSpawnPosition" type="Node3D" parent="Rig"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0.2, -1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.670426, 0.741975, 0, -0.741975, 0.670426, 0, 13, 9)
+
+[node name="BuildMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_aq8e7")
+
+[node name="Recources" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 23.0
+text = "Recources:"

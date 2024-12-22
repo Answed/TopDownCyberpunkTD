@@ -2,9 +2,9 @@
 /shelf/
 /workspace.xml
 # Rider ignored files
+/.idea.TopDownCyberpunkTD.iml
 /modules.xml
 /contentModel.xml
-/.idea.TopDownCyberpunkTD.iml
 /projectSettingsUpdater.xml
 # Editor-based HTTP Client requests
 /httpRequests/
