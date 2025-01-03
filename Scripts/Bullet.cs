@@ -33,7 +33,6 @@ public partial class Bullet : RigidBody3D
 
 	private void _onBodyEntered(Node3D body)
 	{
-		GD.Print("Bullet entered");
 		QueueFree();
 	}
 

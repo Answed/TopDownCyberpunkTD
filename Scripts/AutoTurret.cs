@@ -31,10 +31,8 @@ public partial class AutoTurret : StaticBody3D
 	
 	private void _onDetectionRangeEntered(Node3D node)
 	{
-		GD.Print(node);
 		if (currentEnemy == null) 
 			currentEnemy = node; 
-		GD.Print(currentEnemy);
 	}
 	private void _onDetectionRangeExited(Node3D node)
 	{

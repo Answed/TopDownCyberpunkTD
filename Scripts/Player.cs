@@ -16,6 +16,7 @@ public partial class Player : CharacterBody3D
 	private Camera3D mainCam;
 	private CollisionShape3D rig;
 	private Node3D bulletSpawnPosition;
+	private AudioManager audioManager;
 
 	
 	
@@ -25,6 +26,7 @@ public partial class Player : CharacterBody3D
 		mainCam = GetViewport().GetCamera3D();
 		rig = GetNode<CollisionShape3D>("Rig");
 		bulletSpawnPosition = GetNode<Node3D>("Rig/BulletSpawnPosition");
+		audioManager = GetNode<AudioManager>("../AudioManager") as AudioManager;
 	}
 
 	public void GetInput()
@@ -65,6 +67,7 @@ public partial class Player : CharacterBody3D
 
 	private void Shoot()
 	{
+		audioManager.PlaySound("GunShot");
 		Bullet bullet = bulletScene.Instantiate<Bullet>();
 		AddChild(bullet);
 		bullet.Position = bulletSpawnPosition.GlobalPosition;

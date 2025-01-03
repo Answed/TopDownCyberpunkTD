@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7y3b14du70br"]
+[gd_scene load_steps=8 format=3 uid="uid://c7y3b14du70br"]
 
+[ext_resource type="PackedScene" uid="uid://bpaprda3wd7xx" path="res://Scenes/AudioManager.tscn" id="1_3tasy"]
 [ext_resource type="PackedScene" uid="uid://dvehql4n3x7oj" path="res://Scenes/Player.tscn" id="1_atg34"]
 [ext_resource type="PackedScene" uid="uid://t50x6064htkr" path="res://Scenes/AutoTurret.tscn" id="2_h5yu3"]
 [ext_resource type="PackedScene" uid="uid://dqfhiekuw1i8e" path="res://Scenes/Enemy.tscn" id="3_84fth"]
@@ -41,10 +42,15 @@ light_specular = 114.885
 omni_range = 2826.47
 
 [node name="Enemy" parent="." instance=ExtResource("3_84fth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.375, 1, 5.185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2948, 1, 5.185)
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+health = 2
+radius = 10.0
+height = 5.0
 
 [node name="AutoTurret" parent="." instance=ExtResource("2_h5yu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77087, 1, 7.26122)
+
+[node name="AudioManager" parent="." instance=ExtResource("1_3tasy")]

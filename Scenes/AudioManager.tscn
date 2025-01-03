@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpaprda3wd7xx"]
+
+[ext_resource type="Script" path="res://Scripts/AudioManager.cs" id="1_g5jme"]
+[ext_resource type="AudioStream" uid="uid://cts58mmckxgri" path="res://Sounds/laser-gun-81720.mp3" id="2_63xy4"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_g5jme")
+
+[node name="GunShot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_63xy4")
+
+[node name="RifleShot" type="AudioStreamPlayer" parent="."]
+
+[node name="Sound3" type="AudioStreamPlayer" parent="."]
+
+[node name="Sound4" type="AudioStreamPlayer" parent="."]
