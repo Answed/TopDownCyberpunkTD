@@ -6,12 +6,16 @@ using System.Linq;
 public partial class Player : CharacterBody3D
 {
 	[Export] private int speed { get; set; } = 400;
+	[Export] private int dashAccelerate {get; set;} = 5;
+	[Export] private int rotationSpeed {get; set;} = 10;
+
 	[Export] private PackedScene bulletScene;
 
 	private int resources;
 	private Vector3 rayOrigin;
 	private Vector3 rayEnd;
 	private Vector3 rayPosition;
+	private Vector3 diffRay;
 	
 	private Camera3D mainCam;
 	private CollisionShape3D rig;
@@ -41,16 +45,26 @@ public partial class Player : CharacterBody3D
 		var spaceState = GetWorld3D().DirectSpaceState;
 
 		Vector2 mousePosition = GetViewport().GetMousePosition();
+		
 		rayOrigin = mainCam.ProjectRayOrigin(mousePosition);
 		rayEnd = rayOrigin + mainCam.ProjectRayNormal(mousePosition) * 2000;
-
+		
 		var query = PhysicsRayQueryParameters3D.Create(rayOrigin, rayEnd);
+				
 		var intersection = spaceState.IntersectRay(query);
-
-		if (intersection.Count != 0)
+		
+		if (intersection.Count > 0)
 		{
 			rayPosition = intersection["position"].AsVector3();
-			rig.LookAt(new Vector3(rayPosition.X, Position.Y, rayPosition.Z), new Vector3(0, 1, 0));
+			
+			var targetDirection = new Vector3(rayPosition.X, rig.GlobalTransform.Origin.Y, rayPosition.Z) - rig.GlobalTransform.Origin;
+			targetDirection = targetDirection.Normalized();
+		
+			if (targetDirection.Length() > 0)
+			{
+				Basis targetBasis = Basis.LookingAt(targetDirection, Vector3.Up);
+				rig.Basis = rig.Basis.Slerp(targetBasis, (float)delta * rotationSpeed);
+			}
 		}
 		
 		GetInput();
@@ -63,6 +77,11 @@ public partial class Player : CharacterBody3D
 		{
 			Shoot();
 		}
+		
+		if (@event.IsActionPressed("Dash"))
+		{
+			Dash();
+		}
 	}
 
 	private void Shoot()
@@ -72,6 +91,13 @@ public partial class Player : CharacterBody3D
 		AddChild(bullet);
 		bullet.Position = bulletSpawnPosition.GlobalPosition;
 		bullet.Direction(new Vector3(rayPosition.X, Position.Y, rayPosition.Z));
+	}
+	
+	private async void Dash()
+	{
+		speed = speed * dashAccelerate;
+		await ToSignal(GetTree().CreateTimer(0.1), SceneTreeTimer.SignalName.Timeout);
+		speed = speed / dashAccelerate;
 	}
 
 	public Vector3 getRayPosition()
