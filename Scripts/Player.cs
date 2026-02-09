@@ -17,6 +17,8 @@ public partial class Player : CharacterBody3D
 	private Vector3 rayPosition;
 	private Vector3 diffRay;
 	
+	private bool buildMenuOpen = false;
+	
 	private Camera3D mainCam;
 	private CollisionShape3D rig;
 	private Node3D bulletSpawnPosition;
@@ -73,7 +75,7 @@ public partial class Player : CharacterBody3D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("Shoot"))
+		if (@event.IsActionPressed("Shoot") && !buildMenuOpen)
 		{
 			Shoot();
 		}
@@ -104,4 +106,8 @@ public partial class Player : CharacterBody3D
 	{
 		return rayPosition;
 	}
+
+	private void OnBuildMenuOpen() { buildMenuOpen = true; }
+
+	private void OnBuildMenuClose() { buildMenuOpen = false; }
 }

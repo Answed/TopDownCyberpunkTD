@@ -5,14 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e856e51-beb5-4450-9af0-1da2fc13abfd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/libraries/GdSdk_Master.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Enemy.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Enemy.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/AutoTurret.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/AutoTurret.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scenes/Player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Player.tscn" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/main.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/AutoTurret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/AutoTurret.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Bullet.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Bullet.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/Enemy.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Enemy.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/GunTurret.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/GunTurret.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/TurretBase.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/TurretBase.png.import" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Textures/icon.svg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/icon.svg.import" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TopDownCyberpunkTD.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TopDownCyberpunkTD.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TopDownCyberpunkTD.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TopDownCyberpunkTD.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +51,7 @@
     ".NET Executable.Player.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -56,37 +64,41 @@
   }
 }]]></component>
   <component name="RunManager" selected=".NET Executable.Player">
-    <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory" show_console_on_std_err="false" show_console_on_std_out="false" port="6006">
-      <option name="address" value="127.0.0.1" />
-      <option name="allowRunningInParallel" value="false" />
-      <option name="listenPortForConnections" value="false" />
-      <option name="projectPathOnTarget" />
-      <option name="selectedOptions">
-        <list />
-      </option>
+    <configuration name="Debug GDScript (Running session)" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory">
+      <option name="json" value="{&#10;  // Launch: &quot;Launch a new instance of the game&quot;,&#10;  // Attach: &quot;Attach to an already running game, which was started from the Godot Editor&quot;&#10;  &quot;request&quot; : &quot;Attach&quot;,&#10;  &quot;debugServer&quot; : 6006, // port should match the Debug Adapter port in the Godot Editor project settings.&#10;  &quot;scene&quot; : &quot;main&quot;, // main, current, res://path/to/file.tscn&#10;  &#10;  // &quot;playArgs&quot; : [ &quot;--editor&quot; ], // debugging a tool script&#10;  // &quot;playArgs&quot;: [&quot;--debug-collisions&quot;,&quot;--debug-navigation&quot;], // different options&#10;  &#10;  // one click deploy and debug via Godot Editor:&#10;  // &quot;platform&quot;: &quot;Android&quot;, // including Android, iOS, Web and W4 consoles&#10;  // &quot;device&quot;: &quot;0&quot;, // index of the device of a &quot;platform&quot; type&#10;}" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Player GDScript" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory">
+      <option name="json" value="{&#10;  // Launch: &quot;Launch a new instance of the game&quot;,&#10;  // Attach: &quot;Attach to an already running game, which was started from the Godot Editor&quot;&#10;  &quot;request&quot; : &quot;Launch&quot;,&#10;  &quot;debugServer&quot; : 6006, // port should match the Debug Adapter port in the Godot Editor project settings.&#10;  &quot;scene&quot; : &quot;main&quot;, // main, current, res://path/to/file.tscn&#10;  &#10;  // &quot;playArgs&quot; : [ &quot;--editor&quot; ], // debugging a tool script&#10;  // &quot;playArgs&quot;: [&quot;--debug-collisions&quot;,&quot;--debug-navigation&quot;], // different options&#10;  &#10;  // one click deploy and debug via Godot Editor:&#10;  // &quot;platform&quot;: &quot;Android&quot;, // including Android, iOS, Web and W4 consoles&#10;  // &quot;device&quot;: &quot;0&quot;, // index of the device of a &quot;platform&quot; type&#10;}" />
       <method v="2" />
     </configuration>
     <configuration name="Editor" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/DevTools/Godot_v4.6-stable_mono_linux_x86_64/Godot_v4.6-stable_mono_linux.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot; --editor" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\arwed\Documents\Coden\Projekte\TopDownCyberpunkTD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="RUNTIME_TYPE" value="coreclr" />
       <method v="2">
         <option name="Build Solution" enabled="true" />
       </method>
     </configuration>
     <configuration name="Player" type="RunExe" factoryName=".NET Executable">
-      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64/Godot_v4.3-stable_mono_win64.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/DevTools/Godot_v4.6-stable_mono_linux_x86_64/Godot_v4.6-stable_mono_linux.x86_64" />
       <option name="PROGRAM_PARAMETERS" value="--path &quot;./&quot;" />
-      <option name="WORKING_DIRECTORY" value="C:\Users\arwed\Documents\Coden\Projekte\TopDownCyberpunkTD" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
-      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="ENV_FILE_PATHS" value="" />
+      <option name="REDIRECT_INPUT_PATH" value="" />
+      <option name="MIXED_MODE_DEBUG" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="AUTO_ATTACH_CHILDREN" value="0" />
       <option name="RUNTIME_TYPE" value="coreclr" />
       <method v="2">
         <option name="Build Solution" enabled="true" />
@@ -105,6 +117,7 @@
       <workItem from="1735050668499" duration="4030000" />
       <workItem from="1735299102007" duration="288000" />
       <workItem from="1735300299933" duration="5464000" />
+      <workItem from="1770646016042" duration="4482000" />
     </task>
     <servers />
   </component>
@@ -131,6 +144,18 @@
           </properties>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

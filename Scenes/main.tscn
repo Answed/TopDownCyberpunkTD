@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7y3b14du70br"]
+[gd_scene format=3 uid="uid://c7y3b14du70br"]
 
 [ext_resource type="PackedScene" uid="uid://bpaprda3wd7xx" path="res://Scenes/AudioManager.tscn" id="1_3tasy"]
 [ext_resource type="PackedScene" uid="uid://dvehql4n3x7oj" path="res://Scenes/Player.tscn" id="1_atg34"]
@@ -13,26 +13,27 @@ size = Vector3(400, 1, 400)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2iw3"]
 albedo_color = Color(0.0470588, 1, 1, 1)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=1067239001]
 
-[node name="GroundFloor" type="StaticBody3D" parent="."]
+[node name="GroundFloor" type="StaticBody3D" parent="." unique_id=1863925002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundFloor"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundFloor" unique_id=806407697]
 shape = SubResource("BoxShape3D_yagxk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GroundFloor/CollisionShape3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GroundFloor/CollisionShape3D" unique_id=530051425]
 transform = Transform3D(400, 0, 0, 0, 1, 0, 0, 0, 400, 0, 0, 0)
 mesh = SubResource("BoxMesh_jvktr")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_g2iw3")
 
-[node name="Player" parent="." instance=ExtResource("1_atg34")]
+[node name="Player" parent="." unique_id=1791810101 instance=ExtResource("1_atg34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_layer = 2
 collision_mask = 4
 speed = 10
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=84538997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.3468, 0)
 light_energy = 3.505
 light_indirect_energy = 19.91
@@ -41,7 +42,7 @@ light_size = 2.475
 light_specular = 114.885
 omni_range = 2826.47
 
-[node name="Enemy" parent="." instance=ExtResource("3_84fth")]
+[node name="Enemy" parent="." unique_id=925022971 instance=ExtResource("3_84fth")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2948, 1, 5.185)
 axis_lock_linear_y = true
 axis_lock_angular_x = true
@@ -50,7 +51,7 @@ health = 2
 radius = 10.0
 height = 5.0
 
-[node name="AutoTurret" parent="." instance=ExtResource("2_h5yu3")]
+[node name="AutoTurret" parent="." unique_id=218724915 instance=ExtResource("2_h5yu3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77087, 1, 7.26122)
 
-[node name="AudioManager" parent="." instance=ExtResource("1_3tasy")]
+[node name="AudioManager" parent="." unique_id=1509941162 instance=ExtResource("1_3tasy")]

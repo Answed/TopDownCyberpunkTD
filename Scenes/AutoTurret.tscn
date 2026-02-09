@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://t50x6064htkr"]
+[gd_scene format=3 uid="uid://t50x6064htkr"]
 
 [ext_resource type="PackedScene" uid="uid://cak2poy5lnyjs" path="res://Scenes/TurretBase.tscn" id="1_7ih2q"]
-[ext_resource type="Script" path="res://Scripts/AutoTurret.cs" id="1_nqduf"]
+[ext_resource type="Script" uid="uid://befl488nvjo0" path="res://Scripts/AutoTurret.cs" id="1_nqduf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lg3hw"]
 size = Vector3(1, 2, 1)
@@ -19,36 +19,35 @@ top_radius = 0.125
 bottom_radius = 0.125
 height = 0.25
 
-[node name="AutoTurret" type="StaticBody3D" groups=["PlayerObjects"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="AutoTurret" type="StaticBody3D" unique_id=737180799 groups=["PlayerObjects"]]
 collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_nqduf")
 radius = 10.0
 height = 5.0
 
-[node name="TurretBase" parent="." instance=ExtResource("1_7ih2q")]
+[node name="TurretBase" parent="." unique_id=565171076 instance=ExtResource("1_7ih2q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1833696040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.501742, 0)
 shape = SubResource("BoxShape3D_lg3hw")
 
-[node name="Tower" type="MeshInstance3D" parent="."]
+[node name="Tower" type="MeshInstance3D" parent="." unique_id=1712776387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0372689)
 mesh = SubResource("BoxMesh_gnmt3")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Tower"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Tower" unique_id=2032446700]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -0.00142479, 0.0490774, -0.564136)
 mesh = SubResource("CylinderMesh_8cqe5")
 
-[node name="BulletPoint" type="Node3D" parent="Tower"]
+[node name="BulletPoint" type="Node3D" parent="Tower" unique_id=1548529627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00406939, 0.0518939, -0.717077)
 
-[node name="DetectionRange" type="Area3D" parent="."]
+[node name="DetectionRange" type="Area3D" parent="." unique_id=1493554139]
 monitorable = false
 
-[node name="Radius" type="CollisionShape3D" parent="DetectionRange"]
+[node name="Radius" type="CollisionShape3D" parent="DetectionRange" unique_id=803106145]
 
 [connection signal="body_entered" from="DetectionRange" to="." method="_onDetectionRangeEntered"]
 [connection signal="body_exited" from="DetectionRange" to="." method="_onDetectionRangeExited"]
