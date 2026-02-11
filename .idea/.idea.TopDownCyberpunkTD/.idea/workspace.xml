@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e856e51-beb5-4450-9af0-1da2fc13abfd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/libraries/GdSdk_Master.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TopDownCyberpunkTD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/AutoTurret.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/AutoTurret.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/Player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/Player.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scenes/main.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/Scenes/main.tscn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Textures/Bullet.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Bullet.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Textures/Enemy.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/Enemy.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Textures/GunTurret.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/GunTurret.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Textures/TurretBase.png.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/TurretBase.png.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Textures/icon.svg.import" beforeDir="false" afterPath="$PROJECT_DIR$/Textures/icon.svg.import" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TopDownCyberpunkTD.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TopDownCyberpunkTD.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TopDownCyberpunkTD.sln" beforeDir="false" afterPath="$PROJECT_DIR$/TopDownCyberpunkTD.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/BuildManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/BuildManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/project.godot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,23 +34,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Executable.Player.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.environmentSetup",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Executable.Player.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.environmentSetup&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Executable.Player">
     <configuration name="Debug GDScript (Running session)" type="GDSCRIPT_DEBUG_RUN_CONFIGURATION" factoryName="GdScriptRunFactory">
       <option name="json" value="{&#10;  // Launch: &quot;Launch a new instance of the game&quot;,&#10;  // Attach: &quot;Attach to an already running game, which was started from the Godot Editor&quot;&#10;  &quot;request&quot; : &quot;Attach&quot;,&#10;  &quot;debugServer&quot; : 6006, // port should match the Debug Adapter port in the Godot Editor project settings.&#10;  &quot;scene&quot; : &quot;main&quot;, // main, current, res://path/to/file.tscn&#10;  &#10;  // &quot;playArgs&quot; : [ &quot;--editor&quot; ], // debugging a tool script&#10;  // &quot;playArgs&quot;: [&quot;--debug-collisions&quot;,&quot;--debug-navigation&quot;], // different options&#10;  &#10;  // one click deploy and debug via Godot Editor:&#10;  // &quot;platform&quot;: &quot;Android&quot;, // including Android, iOS, Web and W4 consoles&#10;  // &quot;device&quot;: &quot;0&quot;, // index of the device of a &quot;platform&quot; type&#10;}" />
@@ -117,7 +105,8 @@
       <workItem from="1735050668499" duration="4030000" />
       <workItem from="1735299102007" duration="288000" />
       <workItem from="1735300299933" duration="5464000" />
-      <workItem from="1770646016042" duration="4482000" />
+      <workItem from="1770646016042" duration="4909000" />
+      <workItem from="1770823081689" duration="618000" />
     </task>
     <servers />
   </component>

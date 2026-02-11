@@ -16,6 +16,7 @@ public partial class BuildManager : Node3D
 	private Vector3 rayEnd;
 	private Vector3 rayPosition;
 	private Vector3 diffRay;
+	private int selectedTurret;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -47,12 +48,17 @@ public partial class BuildManager : Node3D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event.IsActionPressed("BuildMenu"))
+		for (int i = 1; i <= 4; i++)
 		{
-			GD.Print("BuildMenu");
-			EmitSignal("BuildMenuOpen");
-			Preview();
+			if (@event.IsActionPressed($"T{i}"))
+			{
+				GD.Print("BuildMenu");
+				EmitSignal(SignalName.BuildMenuOpen);
+				Preview(i - 1);
+				break; 
+			}
 		}
+
 
 		if (@event.IsActionPressed("Shoot") && previewturretScene != null)
 		{
@@ -60,15 +66,15 @@ public partial class BuildManager : Node3D
 		}
 	}
 
-	private void Preview()
+	private void Preview(int tower)
 	{
-		// TODO: Build switch for different Turrets
-		previewturretScene = turrets[0].Instantiate<StaticBody3D>();
+		selectedTurret = tower;
+		previewturretScene = turrets[tower].Instantiate<StaticBody3D>();
 		AddChild(previewturretScene);
 	}
 	private void BuildTurret()
 	{
-		var newTurret = turrets[0].Instantiate<StaticBody3D>();
+		var newTurret = turrets[selectedTurret].Instantiate<StaticBody3D>();
 		newTurret.Position = new Vector3(rayPosition.X, yHeight, rayPosition.Z);
 		GetTree().Root.AddChild(newTurret);
 		previewturretScene.QueueFree();
