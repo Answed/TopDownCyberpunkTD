@@ -20,8 +20,8 @@ bottom_radius = 0.125
 height = 0.25
 
 [node name="AutoTurret" type="StaticBody3D" unique_id=737180799 groups=["PlayerObjects"]]
-collision_layer = 6
-collision_mask = 0
+collision_layer = 22
+collision_mask = 16
 script = ExtResource("1_nqduf")
 radius = 10.0
 height = 5.0

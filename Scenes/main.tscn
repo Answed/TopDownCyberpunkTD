@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bpaprda3wd7xx" path="res://Scenes/AudioManager.tscn" id="1_3tasy"]
 [ext_resource type="PackedScene" uid="uid://dvehql4n3x7oj" path="res://Scenes/Player.tscn" id="1_atg34"]
-[ext_resource type="PackedScene" uid="uid://t50x6064htkr" path="res://Scenes/AutoTurret.tscn" id="2_h5yu3"]
+[ext_resource type="PackedScene" uid="uid://t50x6064htkr" path="res://Tower/AutoTurret/AutoTurret.tscn" id="2_h5yu3"]
 [ext_resource type="PackedScene" uid="uid://dqfhiekuw1i8e" path="res://Scenes/Enemy.tscn" id="3_84fth"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yagxk"]

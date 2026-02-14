@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwhaewe2goxu7" path="res://Scenes/Bullet.tscn" id="2_t3noh"]
 [ext_resource type="Script" uid="uid://c56n68e66uoa7" path="res://Scripts/Ui.cs" id="3_aq8e7"]
 [ext_resource type="Script" uid="uid://b30do0l8uv8pt" path="res://Scripts/BuildManager.cs" id="3_dewec"]
-[ext_resource type="PackedScene" uid="uid://t50x6064htkr" path="res://Scenes/AutoTurret.tscn" id="4_5ixxa"]
+[ext_resource type="Script" uid="uid://cth4qd8g58pal" path="res://Scripts/Ressources/TowerResource.cs" id="4_5ixxa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xn7oi"]
 
@@ -17,6 +17,15 @@ albedo_color = Color(1, 1, 0.231373, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tosgo"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_nn08x"]
+script = ExtResource("4_5ixxa")
+Cost = 10
+TowerScenePath = "uid://t50x6064htkr"
+metadata/_custom_type_script = "uid://cth4qd8g58pal"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ixxa"]
+size = Vector3(1.25, 2, 1.25)
 
 [node name="Player" type="CharacterBody3D" unique_id=1041001499 groups=["PlayerObjects"]]
 collision_layer = 6
@@ -48,8 +57,16 @@ transform = Transform3D(1, 0, 0, 0, 0.670426, 0.741975, 0, -0.741975, 0.670426, 
 
 [node name="BuildManager" type="Node3D" parent="." unique_id=940858556]
 script = ExtResource("3_dewec")
-turrets = Array[PackedScene]([ExtResource("4_5ixxa")])
 yHeight = 1.0
+turrets = Array[Object]([SubResource("Resource_nn08x")])
+
+[node name="BuildingArea" type="Area3D" parent="BuildManager" unique_id=374288692]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BuildManager/BuildingArea" unique_id=1013406751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020179749, 0)
+shape = SubResource("BoxShape3D_5ixxa")
 
 [node name="UI" type="Control" parent="." unique_id=321853857]
 layout_mode = 3
@@ -64,5 +81,5 @@ offset_right = 196.0
 offset_bottom = 23.0
 text = "Recources:"
 
-[connection signal="BuildMenuClose" from="BuildManager" to="." method="OnBuildMenuClose"]
-[connection signal="BuildMenuOpen" from="BuildManager" to="." method="OnBuildMenuOpen"]
+[connection signal="body_entered" from="BuildManager/BuildingArea" to="BuildManager" method="BodyEntered"]
+[connection signal="body_exited" from="BuildManager/BuildingArea" to="BuildManager" method="BodyExited"]

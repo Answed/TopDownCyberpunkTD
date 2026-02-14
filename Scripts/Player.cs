@@ -110,4 +110,9 @@ public partial class Player : CharacterBody3D
 	private void OnBuildMenuOpen() { buildMenuOpen = true; }
 
 	private void OnBuildMenuClose() { buildMenuOpen = false; }
+	
+	public void IncreaseResources(int amount) { resources += amount; }
+	public void DecreaseResources(int amount) { resources -= amount; }
+	
+	public int GetResources() { return resources; }
 }

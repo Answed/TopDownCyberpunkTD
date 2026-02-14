@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopDownCyberpunkTD", "TopDownCyberpunkTD.csproj", "{783B64F1-C525-4E46-B15E-21005A0E5C56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TopDownCyberpunkTD", "TopDownCyberpunkTD.csproj", "{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,11 +9,11 @@ Global
 	ExportRelease|Any CPU = ExportRelease|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
-		{783B64F1-C525-4E46-B15E-21005A0E5C56}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{B4F3E9B9-90FD-4C94-B1FC-C21CE208FBAB}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal
